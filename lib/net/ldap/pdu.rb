@@ -112,6 +112,10 @@ class Net::LDAP::PDU
     @ldap_result || {}
   end
 
+  def zero?
+    (result[:resultCode] || 0) == 0
+  end
+
   def error_message
     result[:errorMessage] || ""
   end
